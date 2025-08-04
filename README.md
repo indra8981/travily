@@ -30,3 +30,26 @@ First, clone the repository containing this project to your local machine.
 # This is a placeholder; you would clone the main Klavis AI repo
 git clone [https://github.com/Klavis-Al/klavis.git](https://github.com/Klavis-Al/klavis.git)
 cd path/to/this/server
+```
+
+✅ Testing the Tools
+You can test each tool to confirm the server is working correctly. Use a tool like curl to send POST requests to the /tools endpoint. Make sure the server is running in another terminal window.
+Test search
+```bash
+curl -X POST http://127.0.0.1:3434/tools -H "Content-Type: application/json" -d '{"tool": "search", "params": {"query": "latest news on generative AI"}}'
+```
+
+Test deep_search
+```bash
+curl -X POST http://127.0.0.1:3434/tools -H "Content-Type: application/json" -d '{"tool": "deep_search", "params": {"query": "Explain the technical details of Retrieval-Augmented Generation"}}'
+```
+
+Test get_direct_answer
+```bash
+curl -X POST http://127.0.0.1:3434/tools -H "Content-Type: application/json" -d '{"tool": "get_direct_answer", "params": {"query": "How does photosynthesis work?"}}'
+```
+
+Test search_specific_domains
+```bash
+curl -X POST http://127.0.0.1:3434/tools -H "Content-Type: application/json" -d '{"tool": "search_specific_domains", "params": {"query": "open source models", "domains": ["github.com", "huggingface.co"]}}'
+```
